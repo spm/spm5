@@ -1625,7 +1625,7 @@ for Order = OPTIONS.SourceModel % Compute gain matrices for each requested sourc
     
     if ~isempty(OPTIONS.ImageGridFile) % Save cortical gain matrix in a binary file
         
-        [PATH,NAME,EXT,VER] = fileparts(OPTIONS.HeadModelFile);
+        [PATH,NAME,EXT,VER] = spm_fileparts(OPTIONS.HeadModelFile);
         
         if strcmp(lower(OPTIONS.ImageGridFile),'default') 
             if exist('GridName','var') % Cortical support was specified
@@ -1656,7 +1656,7 @@ for Order = OPTIONS.SourceModel % Compute gain matrices for each requested sourc
             end
             OPTIONS.ImageGridFile = destname;
         else
-            [PATH,destname,ext,ver] = fileparts(OPTIONS.ImageGridFile);
+            [PATH,destname,ext,ver] = spm_fileparts(OPTIONS.ImageGridFile);
             destname = [destname, ext];
         end
         

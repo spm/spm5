@@ -235,7 +235,7 @@ for i = 1:prod(size(P)),
 		end;
 		if write_vol,
 			VO         = P(i);
-			[pth,nm,xt,vr] = fileparts(deblank(P(i).fname));
+			[pth,nm,xt,vr] = spm_fileparts(deblank(P(i).fname));
 			VO.fname   = fullfile(pth,['r' nm xt vr]);
 			VO.dim     = P(1).dim(1:3);
 			VO.dt      = P(i).dt;
@@ -256,7 +256,7 @@ if flags.mean
 	Integral   = Integral./Count;
 	PO         = P(1);
 	PO         = rmfield(PO,'pinfo');
-	[pth,nm,xt,vr] = fileparts(deblank(P(1).fname));
+	[pth,nm,xt,vr] = spm_fileparts(deblank(P(1).fname));
 	PO.fname   = fullfile(pth,['mean' nm xt]);
 	PO.pinfo   = [max(max(max(Integral)))/32767 0 0]';
 	PO.descrip = 'spm - mean image';

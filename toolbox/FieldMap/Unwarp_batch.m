@@ -133,7 +133,7 @@ for i=1:nsubs
       end       
       ds = spm_uw_estimate(P{i}{j},uwe_flags);
       ads(j) = ds;
-      [path,name,ext,ver] = fileparts(P{i}{j}(1,:));
+      [path,name,ext,ver] = spm_fileparts(P{i}{j}(1,:));
       pefile = fullfile(path,[name '_uw.mat']);
       save(pefile,'ds');
    end

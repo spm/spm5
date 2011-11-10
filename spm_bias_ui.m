@@ -91,7 +91,7 @@ for i=1:size(PP,1),
 	drawnow;
 	P              = deblank(PP(i,:));
 	T              = spm_bias_estimate(P,flags);
-	[pth,nm,xt,vr] = fileparts(P);
+	[pth,nm,xt,vr] = spm_fileparts(P);
 	S              = fullfile(pth,['bias_' nm '.mat']);
 	%S             = ['bias_' nm '.mat'];
 	spm_bias_apply(P,S);

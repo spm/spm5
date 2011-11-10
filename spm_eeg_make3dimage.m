@@ -25,7 +25,7 @@ for n=1:length(v)
     data(:,:,n)=temp;
 end
 V=v(1);
-[pathstr,name,ext,cersn] = fileparts(D) ;
+[pathstr,name,ext,cersn] = spm_fileparts(D) ;
 V.fname = fullfile(pathstr,[name '3d.img']);
 V.dim = [v(1).dim(1) v(1).dim(2) length(v)];
 V.mat = eye(4);
